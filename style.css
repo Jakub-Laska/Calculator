@@ -22,7 +22,20 @@ body {
     padding: .2rem;
     border-radius: .2rem;
     border: 1px solid rgb(52, 52, 78);
+    font-size: .5rem;
 }
+.equals-btn {
+    background-color: rgb(255, 117, 117);
+}
+.operator {
+    background-color: rgb(187, 187, 187);
+}
+.calc-btn:hover {
+    opacity: .8;
+    cursor: pointer;
+    transition: .2s;
+}
+
 #display {
     width: 100%;
     display: flex;
