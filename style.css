@@ -10,10 +10,15 @@ body {
 }
 #calc-body {
     border: 2px black solid;
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-wrap: wrap;
+    /* gap: .1rem; */
 }
 .calc-btn {
-    width: 33%;
+    width: 25%;
+    /* padding: .2rem;
+    border-radius: .2rem;
+    border: none;
+    margin-top: .2rem; */
 }
