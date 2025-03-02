@@ -4,4 +4,16 @@
 }
 body {
     background-color: rgba(0, 0, 128, 0.685);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+#calc-body {
+    border: 2px black solid;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.calc-btn {
+    width: 33%;
 }
