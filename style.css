@@ -2,6 +2,7 @@
     padding: 0;
     margin: auto;
     font-size: 2rem;
+    box-sizing: border-box;
 }
 body {
     background-color: #0c0c0c;
