@@ -169,9 +169,9 @@ function createNum () {
 };
 
 function resize () {
-    if (display.textContent.length > 12) {
-        display.style.fontSize = '2vw';
+    if (display.textContent.length > 10) {
+        display.style.fontSize = '1.25vw';
     } else {
-        display.style.fontSize = '2.5vw';
+        display.style.fontSize = '2vw';
     }
 };
