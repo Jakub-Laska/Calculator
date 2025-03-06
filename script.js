@@ -18,7 +18,7 @@
 // //     display.innerHTML =  num + '/';
 // //     } else {
 // //         display.innerHTML = num;
-// //     } 
+// //     }
 // // });
 // //           -- second row --
 // const seven = document.querySelector('#seven');
@@ -27,7 +27,7 @@
 //     display.innerHTML =  num += '7';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 // const eight = document.querySelector('#eight');
 // eight.addEventListener('click', () => {
@@ -35,7 +35,7 @@
 //     display.innerHTML =  num += '8';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 // const nine = document.querySelector('#nine');
 // nine.addEventListener('click', () => {
@@ -43,7 +43,7 @@
 //     display.innerHTML =  num += '9';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 // const multiplication = document.querySelector('#multiplication');
 
@@ -54,7 +54,7 @@
 //     display.innerHTML =  num += '4';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 // const five = document.querySelector('#five');
 // five.addEventListener('click', () => {
@@ -62,7 +62,7 @@
 //     display.innerHTML =  num += '5';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 // const six = document.querySelector('#six');
 // six.addEventListener('click', () => {
@@ -70,7 +70,7 @@
 //     display.innerHTML =  num += '6';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 
 // const minus = document.querySelector('#minus');
@@ -82,7 +82,7 @@
 //     display.innerHTML =  num += '1';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 
 // const two = document.querySelector('#two');
@@ -91,7 +91,7 @@
 //     display.innerHTML =  num += '2';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 
 // const three = document.querySelector('#three');
@@ -100,7 +100,7 @@
 //     display.innerHTML =  num += '3';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 
 // const plus = document.querySelector('#plus');
@@ -114,7 +114,7 @@
 //     display.innerHTML =  num += '0';
 //     } else {
 //         display.innerHTML = num;
-//     } 
+//     }
 // });
 
 // const period = document.querySelector('#period');
@@ -133,45 +133,61 @@
 // };
 // };
 
-const clearAll = document.querySelector('#clear-all');
-clearAll.addEventListener('click', () => {
-    display.style.fontSize = '2.5vw';
-    display.innerHTML = '';
-    num = '';
+const clearAll = document.querySelector("#clear-all");
+clearAll.addEventListener("click", () => {
+  display.style.fontSize = "2.5vw";
+  display.innerHTML = "";
+  num = "";
 });
 
-const display = document.querySelector('#display');
-
-
-
+const display = document.querySelector("#display");
 
 let digitLimit = 16;
-let num = '';
-let numValue = '';
+let num = "";
+let numValue = "";
 
-
-const zero = document.querySelector('#zero');
-zero.addEventListener('click', () => {
-    numValue = 0;
-    createNum ();
-    resize ();
+const zero = document.querySelector("#zero");
+zero.addEventListener("click", () => {
+  numValue = 0;
+  createNum();
 });
 
+function createNum() {
+  if (display.textContent.length < digitLimit) {
+    display.innerHTML = num += numValue;
+  } else {
+    display.innerHTML = num;
+  }
+  resize();
+  centerAtMax();
+}
 
-
-
-function createNum () {
-    if (display.textContent.length <= digitLimit) {
-        display.innerHTML = num += numValue; 
-    } else {
-        display.innerHTML = num;
-    };
+function resize() {
+    if (screen.width < 600) {
+        if (display.textContent.length > 10) {
+        display.style.fontSize = "2vw";
+        } else {
+        display.style.fontSize = "3.5vw";
+        }
+    } else if (screen.width < 1100) {
+        if (display.textContent.length > 10) {
+        display.style.fontSize = "2.5vw";
+        } else {
+        display.style.fontSize = "3.5vw";
+        }
+    } else if (screen.width > 1100) {
+        if (display.textContent.length > 10) {
+        display.style.fontSize = "1.25vw";
+        } else {
+        display.style.fontSize = "1.75vw";
+        }
+    }
 };
 
-function resize () {
-    if (display.textContent.length > 10) {
-        display.style.fontSize = '1.25vw';
+function centerAtMax () {
+    if (display.textContent.length == 16) {
+        display.style.justifyContent = 'center';
     } else {
-        display.style.fontSize = '2vw';
+        display.style.justifyContent = 'flex-end';
     }
 };

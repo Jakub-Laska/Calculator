@@ -34,7 +34,6 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 
-
-1. limit 16 as in windows calc with flex shrink
+1. media queries
 2. operator saves the number and puts it above display
 3. 2nd click of the same operator lets you change the number
