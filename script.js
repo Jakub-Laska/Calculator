@@ -1,138 +1,7 @@
-// //           -- display --
-// const display = document.querySelector('#display');
-// //           -- first row --
-// // Clear all function
-// const clearAll = document.querySelector('#clear-all');
-// clearAll.addEventListener('click', () => {
-//     display.innerHTML = '0';
-//     num = '';
-// })
-// // clear function
-// const clear = document.querySelector('#clear');
+// DISPLAY
+const display = document.querySelector('#display');
 
-// const backspace = document.querySelector('#backspace');
-// // division function
-// const division = document.querySelector('#division');
-// // division.addEventListener('click', () => {
-// //     if (display.textContent.length < digitLimit + 1){
-// //     display.innerHTML =  num + '/';
-// //     } else {
-// //         display.innerHTML = num;
-// //     }
-// // });
-// //           -- second row --
-// const seven = document.querySelector('#seven');
-// seven.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '7';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-// const eight = document.querySelector('#eight');
-// eight.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '8';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-// const nine = document.querySelector('#nine');
-// nine.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '9';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-// const multiplication = document.querySelector('#multiplication');
-
-// //           -- third row --
-// const four = document.querySelector('#four');
-// four.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '4';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-// const five = document.querySelector('#five');
-// five.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '5';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-// const six = document.querySelector('#six');
-// six.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '6';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-
-// const minus = document.querySelector('#minus');
-
-// //          -- fourth row --
-// const one = document.querySelector('#one');
-// one.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '1';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-
-// const two = document.querySelector('#two');
-// two.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '2';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-
-// const three = document.querySelector('#three');
-// three.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '3';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-
-// const plus = document.querySelector('#plus');
-
-// //           -- fifth row --
-// const negation = document.querySelector('#negation');
-
-// const zero = document.querySelector('#zero');
-// zero.addEventListener('click', () => {
-//     if (display.textContent.length < digitLimit){
-//     display.innerHTML =  num += '0';
-//     } else {
-//         display.innerHTML = num;
-//     }
-// });
-
-// const period = document.querySelector('#period');
-// const equals = document.querySelector('#equals');
-
-// //
-// let num = '';
-// let firstNum = 0;
-// let operator = '';
-// let secondNum = 0;
-
-// let digitLimit = 16;
-// function checkLimit () {
-//     if (display.textContent.length = 16) {
-
-// };
-// };
-
+// CLEARS
 const clearAll = document.querySelector("#clear-all");
 clearAll.addEventListener("click", () => {
   display.style.fontSize = "2.5vw";
@@ -140,17 +9,85 @@ clearAll.addEventListener("click", () => {
   num = "";
 });
 
-const display = document.querySelector("#display");
+const clear = document.querySelector('#clear');
 
-let digitLimit = 16;
-let num = "";
-let numValue = "";
+const backspace = document.querySelector('#backspace');
 
+// OPERATORS
+const division = document.querySelector('#division');
+const multiplication = document.querySelector('#multiplication');
+const minus = document.querySelector('#minus');
+const plus = document.querySelector('#plus');
+const negation = document.querySelector('#negation');
+const period = document.querySelector('#period');
+const equals = document.querySelector('#equals');
+
+// NUMBERS
 const zero = document.querySelector("#zero");
 zero.addEventListener("click", () => {
   numValue = 0;
   createNum();
 });
+
+const one = document.querySelector('#one');
+one.addEventListener('click', () => {
+    numValue = 1;
+    createNum();
+});
+
+const two = document.querySelector('#two');
+two.addEventListener('click', () => {
+    numValue = 2;
+    createNum();
+});
+
+const three = document.querySelector('#three');
+three.addEventListener('click', () => {
+    numValue = 3;
+    createNum(); 
+});
+
+const four = document.querySelector('#four');
+four.addEventListener('click', () => {
+    numValue = 4;
+    createNum();
+});
+
+const five = document.querySelector('#five');
+five.addEventListener('click', () => {
+    numValue = 5;
+    createNum();
+});
+
+const six = document.querySelector('#six');
+six.addEventListener('click', () => {
+    numValue = 6;
+    createNum();
+});
+
+const seven = document.querySelector('#seven');
+seven.addEventListener('click', () => {
+    numValue = 7;
+    createNum();
+});
+
+const eight = document.querySelector('#eight');
+eight.addEventListener('click', () => {
+    numValue = 8;
+    createNum();
+});
+
+const nine = document.querySelector('#nine');
+nine.addEventListener('click', () => {
+    numValue = 9;
+    createNum();
+});
+
+
+// FUNCTIONS
+let digitLimit = 16;
+let num = "";
+let numValue = "";
 
 function createNum() {
   if (display.textContent.length < digitLimit) {
@@ -165,9 +102,9 @@ function createNum() {
 function resize() {
     if (screen.width < 600) {
         if (display.textContent.length > 10) {
-        display.style.fontSize = "2vw";
+        display.style.fontSize = "3vw";
         } else {
-        display.style.fontSize = "3.5vw";
+        display.style.fontSize = "4.5vw";
         }
     } else if (screen.width < 1100) {
         if (display.textContent.length > 10) {
