@@ -47,6 +47,7 @@ body {
 .equals-btn {
     background-color: #bd4b43;
     color: #2C2C34;
+    text-shadow: 2px 2px 3px #c9b5b5;
 }
 .operator {
     background-color: #978897;
