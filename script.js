@@ -2,7 +2,7 @@
 const display = document.querySelector('#display');
 
 // CLEARS
-const clearAll = document.querySelector("#clear-all");
+const clearAll = document.querySelector("#clearAll");
 clearAll.addEventListener("click", () => {
   display.style.fontSize = "2.5vw";
   display.innerHTML = "";
