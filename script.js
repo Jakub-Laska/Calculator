@@ -3,9 +3,14 @@ let digitLimit = 16;
 let num = "";
 let numValue = "";
 let operatorValue = '';
+let savedNum = '';
+let toggleValue = 0;
+let secondNum = '';
 
 // DISPLAY
 const display = document.querySelector('#display');
+
+const secondDisplay = document.querySelector('#secondDisplay');
 
 // CLEARS
 const clearAll = document.querySelector("#clearAll");
@@ -13,6 +18,10 @@ clearAll.addEventListener("click", () => {
   display.style.fontSize = "2.5vw";
   display.innerHTML = "";
   num = "";
+  savedNum = '';
+  secondNum = '';
+  toggleValue = 0;
+  secondDisplay.innerHTML = '';
 });
 
 const clear = document.querySelector('#clear');
@@ -20,11 +29,30 @@ const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
 
 // OPERATORS
-
+const division = document.querySelector('#division');
+division.addEventListener('click', () => {
+    operatorValue = '  /';
+    operatorToggle();
+});
 
 const multiplication = document.querySelector('#multiplication');
+multiplication.addEventListener('click', () => {
+    operatorValue = '  *';
+    operatorToggle();
+});
+
 const minus = document.querySelector('#minus');
+minus.addEventListener('click', () => {
+    operatorValue = '  -';
+    operatorToggle();
+});
+
 const plus = document.querySelector('#plus');
+plus.addEventListener('click', () => {
+    operatorValue = '  +';
+    operatorToggle();
+});
+
 const negation = document.querySelector('#negation');
 const period = document.querySelector('#period');
 const equals = document.querySelector('#equals');
@@ -93,14 +121,22 @@ nine.addEventListener('click', () => {
 
 // FUNCTIONS
 function createNum() {
-  if (display.textContent.length < digitLimit) {
-    display.innerHTML = num += numValue;
-  } else {
-    display.innerHTML = num;
-  }
-  resize();
-  centerAtMax();
-};
+    if (display.textContent.length < digitLimit) {
+      if (toggleValue == 0) {
+      display.innerHTML = num += numValue;
+      } else {
+          display.innerHTML = secondNum += numValue;
+      }
+    } else {
+        if (toggleValue == 0) {
+        display.innerHTML = num;
+        } else {
+            display.innerHTML = secondNum;
+        }
+    };
+    resize();
+    centerAtMax();
+  };
 
 function resize() {
     if (screen.width < 600) {
@@ -124,7 +160,7 @@ function resize() {
     }
 };
 
-function centerAtMax () {
+function centerAtMax() {
     if (display.textContent.length == 16) {
         display.style.justifyContent = 'center';
     } else {
@@ -132,10 +168,23 @@ function centerAtMax () {
     }
 };
 
+function operatorToggle() {
+    if (display.innerHTML != '' || secondDisplay.innerHTML != '') {
+        if (toggleValue == 0) {
+        savedNum = num;
+        num = '';
+        secondDisplay.innerHTML = savedNum + operatorValue;
+        toggleValue = 1;
+        display.innerHTML = secondNum
+        } else {
+            num = savedNum;
+            savedNum = '';
+            secondDisplay.innerHTML = '';
+            toggleValue = 0;
+            display.innerHTML = num;
+            secondNum = ''
+        }
+     }
+};
 
-const division = document.querySelector('#division');
-division.addEventListener('click', () => {
-    operatorValue = '/';
-});
 
-const secondDisplay = document.querySelector('secondDisplay')
