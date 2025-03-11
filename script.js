@@ -1,3 +1,9 @@
+// VARIABLES
+let digitLimit = 16;
+let num = "";
+let numValue = "";
+let operatorValue = '';
+
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -14,7 +20,8 @@ const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
 
 // OPERATORS
-const division = document.querySelector('#division');
+
+
 const multiplication = document.querySelector('#multiplication');
 const minus = document.querySelector('#minus');
 const plus = document.querySelector('#plus');
@@ -85,10 +92,6 @@ nine.addEventListener('click', () => {
 
 
 // FUNCTIONS
-let digitLimit = 16;
-let num = "";
-let numValue = "";
-
 function createNum() {
   if (display.textContent.length < digitLimit) {
     display.innerHTML = num += numValue;
@@ -97,7 +100,7 @@ function createNum() {
   }
   resize();
   centerAtMax();
-}
+};
 
 function resize() {
     if (screen.width < 600) {
@@ -128,3 +131,11 @@ function centerAtMax () {
         display.style.justifyContent = 'flex-end';
     }
 };
+
+
+const division = document.querySelector('#division');
+division.addEventListener('click', () => {
+    operatorValue = '/';
+});
+
+const secondDisplay = document.querySelector('secondDisplay')
