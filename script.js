@@ -31,31 +31,35 @@ const backspace = document.querySelector('#backspace');
 // OPERATORS
 const division = document.querySelector('#division');
 division.addEventListener('click', () => {
-    operatorValue = '  /';
+    operatorValue = '/';
     operatorToggle();
 });
 
 const multiplication = document.querySelector('#multiplication');
 multiplication.addEventListener('click', () => {
-    operatorValue = '  *';
+    operatorValue = '*';
     operatorToggle();
 });
 
 const minus = document.querySelector('#minus');
 minus.addEventListener('click', () => {
-    operatorValue = '  -';
+    operatorValue = '-';
     operatorToggle();
 });
 
 const plus = document.querySelector('#plus');
 plus.addEventListener('click', () => {
-    operatorValue = '  +';
+    operatorValue = '+';
     operatorToggle();
 });
 
 const negation = document.querySelector('#negation');
 const period = document.querySelector('#period');
+
 const equals = document.querySelector('#equals');
+equals.addEventListener('click', () => {
+    equalsFunc();
+});
 
 // NUMBERS
 const zero = document.querySelector("#zero");
@@ -173,7 +177,7 @@ function operatorToggle() {
         if (toggleValue == 0) {
         savedNum = num;
         num = '';
-        secondDisplay.innerHTML = savedNum + operatorValue;
+        secondDisplay.innerHTML = (savedNum += operatorValue);
         toggleValue = 1;
         display.innerHTML = secondNum
         } else {
@@ -187,4 +191,16 @@ function operatorToggle() {
      }
 };
 
-
+function equalsFunc() {
+    if (savedNum != '' && secondNum != "") {
+        let resultString = savedNum += secondNum;
+        let resultNum =  new Function('return ' + resultString)();
+        if (resultNum.length > digitLimit) {
+            let currentFontSize = window.getComputedStyle(display).fontSize; 
+            let newFontSize = parseFloat(currentFontSize) * 0.1 + "vw";
+            display.style.fontSize = newFontSize;
+        };
+        display.innerHTML = resultNum;
+        console.log(resultNum);
+    }
+};
