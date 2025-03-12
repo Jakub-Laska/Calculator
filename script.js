@@ -19,7 +19,13 @@ clearAll.addEventListener("click", clearFunc);
 
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
-
+    if (toggleValue == 0) {
+        num = '';
+        display.innerHTML = num;
+    } else {
+        secondNum = '';
+        display.innerHTML = secondNum;
+    }
 });
 
 const backspace = document.querySelector('#backspace');
