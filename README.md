@@ -33,7 +33,14 @@ _______/\\\\\\\_______/\\\_____________
         ___\/////////________\/////////////____ 
 -->
 
-
-1. media queries
-2. operator saves the number and puts it above display
-3. 2nd click of the same operator lets you change the number
+<!-- rest of the functionality
+     history
+     rounding up the numbers with full number when you hover
+     dividing by 0 = error
+     keyboard support
+     better visual presentation
+     sounds
+     clean up the code
+     test on different devices
+     done
+-->

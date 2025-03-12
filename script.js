@@ -18,8 +18,20 @@ const clearAll = document.querySelector("#clearAll");
 clearAll.addEventListener("click", clearFunc);
 
 const clear = document.querySelector('#clear');
+clear.addEventListener('click', () => {
+
+});
 
 const backspace = document.querySelector('#backspace');
+backspace.addEventListener('click', () => {
+    if (toggleValue == 0) {
+        num = num.slice(0, -1);
+        display.innerHTML = num;
+    } else {
+        secondNum = secondNum.slice(0, -1);
+        display.innerHTML = secondNum;
+    };
+});
 
 // OPERATORS
 const division = document.querySelector('#division');
@@ -50,9 +62,7 @@ const negation = document.querySelector('#negation');
 const period = document.querySelector('#period');
 
 const equals = document.querySelector('#equals');
-equals.addEventListener('click', () => {
-    equalsFunc();
-});
+equals.addEventListener('click', equalsFunc);
 
 // NUMBERS
 const zero = document.querySelector("#zero");
@@ -192,7 +202,7 @@ function clearFunc() {
         secondNum = '';
         toggleValue = 0;
         secondDisplay.innerHTML = '';
-}
+};
 
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
@@ -210,11 +220,12 @@ function equalsFunc() {
 };
 
 function historyFunc() {
+    secondDisplay.innerHTML = '';
+    toggleValue = 0;
     savedNum = '';
     secondNum = '';
     let history = resultNum;
     resultNum = '';
-    secondDisplay.innerHTML = '';
-    toggleValue = 0;
-    
-}
+
+
+};

@@ -40,7 +40,8 @@ body {
 
     border-radius: .5rem;
     border: 4px solid #2C2C34;
-    color: #bd4b43;
+    color: #0c0c0c;
+    text-shadow: 2px 2px 3px #bd4b43;
     background-color: #FFF8F0;
     box-shadow: 5px 5px 5px #0c0c0c;
 
@@ -51,8 +52,7 @@ body {
 }
 .equalsBtn {
     background-color: #bd4b43;
-    color: #2C2C34;
-    text-shadow: 2px 2px 3px #c9b5b5;
+    text-shadow: 2px 2px 3px #FFF8F0;
 }
 .operator {
     background-color: #978897;
