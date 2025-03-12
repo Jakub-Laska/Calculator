@@ -6,6 +6,7 @@ let operatorValue = '';
 let savedNum = '';
 let toggleValue = 0;
 let secondNum = '';
+let resultNum = '';
 
 // DISPLAY
 const display = document.querySelector('#display');
@@ -14,15 +15,7 @@ const secondDisplay = document.querySelector('#secondDisplay');
 
 // CLEARS
 const clearAll = document.querySelector("#clearAll");
-clearAll.addEventListener("click", () => {
-  display.style.fontSize = "2.5vw";
-  display.innerHTML = "";
-  num = "";
-  savedNum = '';
-  secondNum = '';
-  toggleValue = 0;
-  secondDisplay.innerHTML = '';
-});
+clearAll.addEventListener("click", clearFunc);
 
 const clear = document.querySelector('#clear');
 
@@ -140,7 +133,7 @@ function createNum() {
     };
     resize();
     centerAtMax();
-  };
+};
 
 function resize() {
     if (screen.width < 600) {
@@ -173,7 +166,7 @@ function centerAtMax() {
 };
 
 function operatorToggle() {
-    if (display.innerHTML != '' || secondDisplay.innerHTML != '') {
+    if (num != '') {
         if (toggleValue == 0) {
         savedNum = num;
         num = '';
@@ -191,16 +184,37 @@ function operatorToggle() {
      }
 };
 
+function clearFunc() {
+        display.style.fontSize = "2.5vw";
+        display.innerHTML = "";
+        num = "";
+        savedNum = '';
+        secondNum = '';
+        toggleValue = 0;
+        secondDisplay.innerHTML = '';
+}
+
 function equalsFunc() {
-    if (savedNum != '' && secondNum != "") {
+    if (savedNum != '' && secondNum != "" && resultNum == '') {
         let resultString = savedNum += secondNum;
-        let resultNum =  new Function('return ' + resultString)();
-        if (resultNum.length > digitLimit) {
+        resultNum =  new Function('return ' + resultString)();
+        if (resultNum.toString().length > digitLimit - 1) {
             let currentFontSize = window.getComputedStyle(display).fontSize; 
-            let newFontSize = parseFloat(currentFontSize) * 0.1 + "vw";
+            let newFontSize = parseFloat(currentFontSize) * 0.5 + "px";
             display.style.fontSize = newFontSize;
         };
         display.innerHTML = resultNum;
         console.log(resultNum);
-    }
+        historyFunc();
+    };
 };
+
+function historyFunc() {
+    savedNum = '';
+    secondNum = '';
+    let history = resultNum;
+    resultNum = '';
+    secondDisplay.innerHTML = '';
+    toggleValue = 0;
+    
+}
