@@ -9,6 +9,7 @@ let secondNum = '';
 let resultNum = '';
 let storedValue = '';
 let storedOperator = '';
+let periodToggle = 0;
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -26,7 +27,8 @@ clear.addEventListener('click', () => {
     } else {
         secondNum = '';
         display.innerHTML = secondNum;
-    }
+    };
+    periodToggle = 0;
 });
 
 const backspace = document.querySelector('#backspace');
@@ -55,6 +57,15 @@ operators.forEach((operator) => {
         storedOperator = operator.innerHTML;
         operatorToggle();
     });
+});
+
+const period = document.querySelector('#period');
+period.addEventListener('click', () => {
+    if (periodToggle == 0) {
+        storedValue = '.';
+        periodToggle = 1;
+        createNum();
+    };
 });
 
 const equals = document.querySelector('#equals');
@@ -119,6 +130,7 @@ function operatorToggle() {
         secondDisplay.innerHTML = (savedNum += storedOperator);
         toggleValue = 1;
         display.innerHTML = secondNum
+        periodToggle = 0;
         } else {
             firstNum = savedNum;
             savedNum = '';
@@ -126,6 +138,7 @@ function operatorToggle() {
             toggleValue = 0;
             display.innerHTML = firstNum;
             secondNum = ''
+            periodToggle == 0;
         }
      }
 };
@@ -137,6 +150,7 @@ function clearFunc() {
         savedNum = '';
         secondNum = '';
         toggleValue = 0;
+        periodToggle = 0;
         secondDisplay.innerHTML = '';
 };
 
@@ -152,6 +166,7 @@ function equalsFunc() {
         display.innerHTML = resultNum;
         console.log(resultNum);
         historyFunc();
+        periodToggle = 0;
     };
 };
 

@@ -57,6 +57,9 @@ body {
 .operator {
     background-color: #978897;
 }
+#backspace {
+    background-color: #978897;
+}
 .calcBtn:hover {
     opacity: .8;
     cursor: pointer;
