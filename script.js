@@ -1,13 +1,14 @@
 // VARIABLES
 let digitLimit = 16;
-let num = "";
+let firstNum = "";
 let numValue = "";
 let operatorValue = '';
 let savedNum = '';
 let toggleValue = 0;
 let secondNum = '';
 let resultNum = '';
-
+let storedValue = '';
+let storedOperator = '';
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -20,8 +21,8 @@ clearAll.addEventListener("click", clearFunc);
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', () => {
     if (toggleValue == 0) {
-        num = '';
-        display.innerHTML = num;
+        firstNum = '';
+        display.innerHTML = firstNum;
     } else {
         secondNum = '';
         display.innerHTML = secondNum;
@@ -31,124 +32,47 @@ clear.addEventListener('click', () => {
 const backspace = document.querySelector('#backspace');
 backspace.addEventListener('click', () => {
     if (toggleValue == 0) {
-        num = num.slice(0, -1);
-        display.innerHTML = num;
+        firstNum = firstNum.slice(0, -1);
+        display.innerHTML = firstNum;
     } else {
         secondNum = secondNum.slice(0, -1);
         display.innerHTML = secondNum;
     };
 });
 
-// OPERATORS
-const division = document.querySelector('#division');
-division.addEventListener('click', () => {
-    operatorValue = '/';
-    operatorToggle();
+
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    storedValue = btn.innerHTML;
+    createNum();
+  });
 });
 
-const multiplication = document.querySelector('#multiplication');
-multiplication.addEventListener('click', () => {
-    operatorValue = '*';
-    operatorToggle();
+const operators = document.querySelectorAll('.operator');
+operators.forEach((operator) => {
+    operator.addEventListener('click', () => {
+        storedOperator = operator.innerHTML;
+        operatorToggle();
+    });
 });
-
-const minus = document.querySelector('#minus');
-minus.addEventListener('click', () => {
-    operatorValue = '-';
-    operatorToggle();
-});
-
-const plus = document.querySelector('#plus');
-plus.addEventListener('click', () => {
-    operatorValue = '+';
-    operatorToggle();
-});
-
-const negation = document.querySelector('#negation');
-
-
-const period = document.querySelector('#period');
-period.addEventListener('click', () => {
-
-});
-
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', equalsFunc);
 
-// NUMBERS
-const zero = document.querySelector("#zero");
-zero.addEventListener("click", () => {
-  numValue = 0;
-  createNum();
-});
-
-const one = document.querySelector('#one');
-one.addEventListener('click', () => {
-    numValue = 1;
-    createNum();
-});
-
-const two = document.querySelector('#two');
-two.addEventListener('click', () => {
-    numValue = 2;
-    createNum();
-});
-
-const three = document.querySelector('#three');
-three.addEventListener('click', () => {
-    numValue = 3;
-    createNum(); 
-});
-
-const four = document.querySelector('#four');
-four.addEventListener('click', () => {
-    numValue = 4;
-    createNum();
-});
-
-const five = document.querySelector('#five');
-five.addEventListener('click', () => {
-    numValue = 5;
-    createNum();
-});
-
-const six = document.querySelector('#six');
-six.addEventListener('click', () => {
-    numValue = 6;
-    createNum();
-});
-
-const seven = document.querySelector('#seven');
-seven.addEventListener('click', () => {
-    numValue = 7;
-    createNum();
-});
-
-const eight = document.querySelector('#eight');
-eight.addEventListener('click', () => {
-    numValue = 8;
-    createNum();
-});
-
-const nine = document.querySelector('#nine');
-nine.addEventListener('click', () => {
-    numValue = 9;
-    createNum();
-});
 
 
 // FUNCTIONS
 function createNum() {
     if (display.textContent.length < digitLimit) {
       if (toggleValue == 0) {
-      display.innerHTML = num += numValue;
+      display.innerHTML = firstNum += storedValue;
       } else {
-          display.innerHTML = secondNum += numValue;
+          display.innerHTML = secondNum += storedValue;
       }
     } else {
         if (toggleValue == 0) {
-        display.innerHTML = num;
+        display.innerHTML = firstNum;
         } else {
             display.innerHTML = secondNum;
         }
@@ -188,19 +112,19 @@ function centerAtMax() {
 };
 
 function operatorToggle() {
-    if (num != '') {
+    if (firstNum != '') {
         if (toggleValue == 0) {
-        savedNum = num;
-        num = '';
-        secondDisplay.innerHTML = (savedNum += operatorValue);
+        savedNum = firstNum;
+        firstNum = '';
+        secondDisplay.innerHTML = (savedNum += storedOperator);
         toggleValue = 1;
         display.innerHTML = secondNum
         } else {
-            num = savedNum;
+            firstNum = savedNum;
             savedNum = '';
             secondDisplay.innerHTML = '';
             toggleValue = 0;
-            display.innerHTML = num;
+            display.innerHTML = firstNum;
             secondNum = ''
         }
      }
@@ -209,7 +133,7 @@ function operatorToggle() {
 function clearFunc() {
         display.style.fontSize = "2.5vw";
         display.innerHTML = "";
-        num = "";
+        firstNum = "";
         savedNum = '';
         secondNum = '';
         toggleValue = 0;
@@ -238,8 +162,6 @@ function historyFunc() {
     secondNum = '';
     let history = resultNum;
     resultNum = '';
-
-
 };
 
 
