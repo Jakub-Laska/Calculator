@@ -65,7 +65,13 @@ plus.addEventListener('click', () => {
 });
 
 const negation = document.querySelector('#negation');
+
+
 const period = document.querySelector('#period');
+period.addEventListener('click', () => {
+
+});
+
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', equalsFunc);
@@ -235,3 +241,6 @@ function historyFunc() {
 
 
 };
+
+
+
