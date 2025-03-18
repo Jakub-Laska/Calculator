@@ -42,7 +42,7 @@ backspace.addEventListener('click', () => {
     };
 });
 
-
+// NUMBERS AND OPERATORS
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -59,14 +59,22 @@ operators.forEach((operator) => {
     });
 });
 
-const period = document.querySelector('#period');
-period.addEventListener('click', () => {
+const period = document.querySelector('#period').addEventListener('click', () => {
     if (periodToggle == 0) {
         storedValue = '.';
         periodToggle = 1;
         createNum();
     };
 });
+
+const negation = document.querySelector('#negation').addEventListener('click', () => {
+    if (toggleValue == 0) {
+        display.innerHTML = -firstNum;
+        } else {
+            display.innerHTML = -secondNum;
+        }
+});
+
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', equalsFunc);
