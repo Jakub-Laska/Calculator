@@ -59,20 +59,49 @@ operators.forEach((operator) => {
     });
 });
 
-const period = document.querySelector('#period').addEventListener('click', () => {
-    if (periodToggle == 0) {
-        storedValue = '.';
+const period = document.querySelector('#period');
+period.addEventListener('click', () => {
+    if (display.innerHTML != '' && periodToggle == 0) {
+        if (toggleValue == 0) {
+            firstNum += '.';
+            display.innerHTML = firstNum;
+        } else {
+            secondNum += '.';
+            display.innerHTML = secondNum;
+        };
         periodToggle = 1;
-        createNum();
+    } else if (periodToggle == 1) {
+        if (toggleValue == 0) {
+            firstNum = firstNum.replace(/\./g, '');
+            display.innerHTML = firstNum;
+        } else {
+            secondNum = secondNum.replace(/\./g, '');
+            display.innerHTML = secondNum;
+        };
+        periodToggle = 0;
     };
 });
+    
+
 
 const negation = document.querySelector('#negation').addEventListener('click', () => {
-    if (toggleValue == 0) {
-        display.innerHTML = -firstNum;
+        if (toggleValue == 0) {
+            if (firstNum > 0) {
+                firstNum = `-${firstNum}`;
+                display.innerHTML = firstNum;
+            } else {
+                firstNum = -firstNum;
+                display.innerHTML = firstNum;
+            };
         } else {
-            display.innerHTML = -secondNum;
-        }
+            if (secondNum > 0) {
+                secondNum = `-${secondNum}`;
+                display.innerHTML = secondNum;
+            } else {
+                secondNum = -secondNum;
+                display.innerHTML = secondNum;
+            };
+        };
 });
 
 
