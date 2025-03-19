@@ -36,7 +36,6 @@ _______/\\\\\\\_______/\\\_____________
 <!-- 
      history
      rounding up the numbers with full number when you hover
-     dividing by 0 = error
      keyboard support
      better visual presentation
      sounds
