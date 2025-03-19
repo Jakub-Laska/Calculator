@@ -203,6 +203,7 @@ function equalsFunc() {
             resultNum = new Function('return ' + resultString)();
             let resultRound = parseFloat(resultNum.toFixed(4));
             display.innerHTML = resultRound;
+            display.setAttribute('title', resultNum);
             console.log(resultNum);
             historyFunc();
             periodToggle = 0;
