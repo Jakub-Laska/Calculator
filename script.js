@@ -200,11 +200,12 @@ function equalsFunc() {
             alert('bruh');
             console.log(display.innerHTML);
         } else {
-            resultNum =  new Function('return ' + resultString)();
-                display.innerHTML = resultNum;
-                console.log(resultNum);
-                historyFunc();
-                periodToggle = 0;
+            resultNum = new Function('return ' + resultString)();
+            let resultRound = parseFloat(resultNum.toFixed(4));
+            display.innerHTML = resultRound;
+            console.log(resultNum);
+            historyFunc();
+            periodToggle = 0;
         };    
     };
 };
