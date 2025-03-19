@@ -10,6 +10,7 @@ let resultNum = '';
 let storedValue = '';
 let storedOperator = '';
 let periodToggle = 0;
+let history;
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -126,7 +127,6 @@ function createNum() {
         }
     };
     resize();
-    centerAtMax();
 };
 
 function resize() {
@@ -148,14 +148,6 @@ function resize() {
         } else {
         display.style.fontSize = "1.75vw";
         }
-    }
-};
-
-function centerAtMax() {
-    if (display.textContent.length == 16) {
-        display.style.justifyContent = 'center';
-    } else {
-        display.style.justifyContent = 'flex-end';
     }
 };
 
@@ -194,6 +186,7 @@ function clearFunc() {
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
         let resultString = savedNum += secondNum;
+        history = resultString;
         if (resultString == '0/0') {
             clearFunc();
             historyFunc();
@@ -216,8 +209,8 @@ function historyFunc() {
     toggleValue = 0;
     savedNum = '';
     secondNum = '';
-    let history = resultNum;
     resultNum = '';
+    
 };
 
 

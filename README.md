@@ -35,11 +35,13 @@ _______/\\\\\\\_______/\\\_____________
 
 <!-- 
      history
-     rounding up the numbers with full number when you hover
      keyboard support
      better visual presentation
      sounds
+     lightmode
+     title and icons
      clean up the code
      test on different devices
      done
+
 -->
