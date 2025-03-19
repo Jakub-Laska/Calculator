@@ -33,7 +33,7 @@ _______/\\\\\\\_______/\\\_____________
         ___\/////////________\/////////////____ 
 -->
 
-<!-- rest of the functionality
+<!-- 
      history
      rounding up the numbers with full number when you hover
      dividing by 0 = error

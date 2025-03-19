@@ -194,16 +194,18 @@ function clearFunc() {
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
         let resultString = savedNum += secondNum;
-        resultNum =  new Function('return ' + resultString)();
-        if (resultNum.toString().length > digitLimit - 1) {
-            let currentFontSize = window.getComputedStyle(display).fontSize; 
-            let newFontSize = parseFloat(currentFontSize) * 0.5 + "px";
-            display.style.fontSize = newFontSize;
-        };
-        display.innerHTML = resultNum;
-        console.log(resultNum);
-        historyFunc();
-        periodToggle = 0;
+        if (resultString == '0/0') {
+            clearFunc();
+            historyFunc();
+            alert('bruh');
+            console.log(display.innerHTML);
+        } else {
+            resultNum =  new Function('return ' + resultString)();
+                display.innerHTML = resultNum;
+                console.log(resultNum);
+                historyFunc();
+                periodToggle = 0;
+        };    
     };
 };
 
