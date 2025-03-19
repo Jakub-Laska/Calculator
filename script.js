@@ -89,7 +89,7 @@ const negation = document.querySelector('#negation').addEventListener('click', (
             if (firstNum > 0) {
                 firstNum = `-${firstNum}`;
                 display.innerHTML = firstNum;
-            } else {
+            } else if (firstNum < 0) {
                 firstNum = -firstNum;
                 display.innerHTML = firstNum;
             };
@@ -97,7 +97,7 @@ const negation = document.querySelector('#negation').addEventListener('click', (
             if (secondNum > 0) {
                 secondNum = `-${secondNum}`;
                 display.innerHTML = secondNum;
-            } else {
+            } else if (secondNum < 0) {
                 secondNum = -secondNum;
                 display.innerHTML = secondNum;
             };
@@ -175,7 +175,7 @@ function operatorToggle() {
             toggleValue = 0;
             display.innerHTML = firstNum;
             secondNum = ''
-            periodToggle == 0;
+            periodToggle = 0;
         }
      }
 };
