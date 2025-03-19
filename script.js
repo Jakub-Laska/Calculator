@@ -210,8 +210,19 @@ function historyFunc() {
     savedNum = '';
     secondNum = '';
     resultNum = '';
-    
 };
 
 
+const bodyContainer = document.querySelector('#calcContent');
+const historyBtn = document.querySelector('#historyBtn');
+let historyToggle = 0;
 
+historyBtn.addEventListener('click', () => {
+    if (historyToggle == 0) {
+        bodyContainer.style.visibility = 'hidden';
+        historyToggle = 1;
+    } else {
+        bodyContainer.style.visibility = 'visible';
+        historyToggle = 0;
+    };
+});
