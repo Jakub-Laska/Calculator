@@ -1,3 +1,4 @@
+
 // VARIABLES
 let digitLimit = 16;
 let firstNum = "";
@@ -10,7 +11,9 @@ let resultNum = '';
 let storedValue = '';
 let storedOperator = '';
 let periodToggle = 0;
-let history;
+let history = '';
+let resultRound;
+let fullHistory;
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -186,43 +189,55 @@ function clearFunc() {
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
         let resultString = savedNum += secondNum;
-        history = resultString;
         if (resultString == '0/0') {
             clearFunc();
-            historyFunc();
             alert('bruh');
             console.log(display.innerHTML);
         } else {
             resultNum = new Function('return ' + resultString)();
-            let resultRound = parseFloat(resultNum.toFixed(4));
+            resultRound = parseFloat(resultNum.toFixed(4));
             display.innerHTML = resultRound;
             display.setAttribute('title', resultNum);
             console.log(resultNum);
-            historyFunc();
             periodToggle = 0;
-        };    
+        };
+        secondDisplay.innerHTML = '';
+        toggleValue = 0;
+        savedNum = '';
+        secondNum = '';
+        resultNum = '';
+        history = resultString + '=' + resultRound;    
+        console.log(history);
+        historyFunc(resultString + ' = ' + resultRound);
     };
 };
 
-function historyFunc() {
-    secondDisplay.innerHTML = '';
-    toggleValue = 0;
-    savedNum = '';
-    secondNum = '';
-    resultNum = '';
+// make ul.children.lenght = ullenght if ul lenght = then do if its more then make it repeat xd
+
+const historyList = document.querySelector('#historyList');
+let historyCount = historyList.children.length;
+function historyFunc(entry) {
+  if (historyCount < 2) {
+    let newEntry = document.createElement('li');
+    newEntry.textContent = entry;
+    historyList.prepend(newEntry);
+  };
 };
 
-
+const calcBody = document.querySelector('#calcBody');
 const bodyContainer = document.querySelector('#calcContent');
 const historyBtn = document.querySelector('#historyBtn');
+const historyScreen = document.querySelector('#historyScreen');
 let historyToggle = 0;
 
 historyBtn.addEventListener('click', () => {
     if (historyToggle == 0) {
-        bodyContainer.style.visibility = 'hidden';
+        bodyContainer.style.display = 'none';
+        historyScreen.style.display = 'flex';
         historyToggle = 1;
     } else {
-        bodyContainer.style.visibility = 'visible';
+        bodyContainer.style.display = 'flex';
+        historyScreen.style.display = 'none';
         historyToggle = 0;
     };
 });
