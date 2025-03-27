@@ -63,29 +63,12 @@ operators.forEach((operator) => {
 });
 
 const period = document.querySelector('#period');
-period.addEventListener('click', () => {
-    if (display.innerHTML != '' && periodToggle == 0) {
-        if (toggleValue == 0) {
-            firstNum += '.';
-            display.innerHTML = firstNum;
-        } else {
-            secondNum += '.';
-            display.innerHTML = secondNum;
-        };
-        periodToggle = 1;
-    } else if (periodToggle == 1) {
-        if (toggleValue == 0) {
-            firstNum = firstNum.replace(/\./g, '');
-            display.innerHTML = firstNum;
-        } else {
-            secondNum = secondNum.replace(/\./g, '');
-            display.innerHTML = secondNum;
-        };
-        periodToggle = 0;
+period.addEventListener('click', periodFunc);
+document.addEventListener('keydown', (event) => {
+    if (event.key === '.') {
+        periodFunc();
     };
 });
-    
-
 
 const negation = document.querySelector('#negation').addEventListener('click', () => {
         if (toggleValue == 0) {
@@ -194,7 +177,7 @@ function clearFunc() {
         display.innerHTML = secondNum;
     };
     periodToggle = 0;
-}
+};
 
 function backspaceFunc() {
     if (toggleValue == 0) {
@@ -204,7 +187,29 @@ function backspaceFunc() {
         secondNum = secondNum.slice(0, -1);
         display.innerHTML = secondNum;
     };
-}
+};
+
+function periodFunc() {
+    if (display.innerHTML != '' && periodToggle == 0) {
+        if (toggleValue == 0) {
+            firstNum += '.';
+            display.innerHTML = firstNum;
+        } else {
+            secondNum += '.';
+            display.innerHTML = secondNum;
+        };
+        periodToggle = 1;
+    } else if (periodToggle == 1) {
+        if (toggleValue == 0) {
+            firstNum = firstNum.replace(/\./g, '');
+            display.innerHTML = firstNum;
+        } else {
+            secondNum = secondNum.replace(/\./g, '');
+            display.innerHTML = secondNum;
+        };
+        periodToggle = 0;
+    };
+};
 
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
