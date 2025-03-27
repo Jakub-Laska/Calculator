@@ -34,11 +34,11 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     keyboard support
      better visual presentation
      sounds
      lightmode
      title and icons
+     add tutorial screen help screen
      clean up the code
      test on different devices
      done

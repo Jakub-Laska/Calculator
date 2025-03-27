@@ -165,6 +165,9 @@ function resize() {
 function operatorToggle() {
     if (firstNum != '') {
         if (toggleValue == 0) {
+            if (firstNum.endsWith('.')) {
+                firstNum = firstNum.slice(0, -1);
+            };
         savedNum = firstNum;
         secondDisplay.innerHTML = (savedNum += storedOperator);
         toggleValue = 1;
