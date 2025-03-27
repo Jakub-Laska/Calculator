@@ -22,7 +22,6 @@ const secondDisplay = document.querySelector('#secondDisplay');
 // CLEARS(
 const clearAll = document.querySelector("#clearAll");
 clearAll.addEventListener("click", clearAllFunc);
-
 document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
         clearAllFunc();
@@ -31,22 +30,19 @@ document.addEventListener("keydown", (event) => {
 
 const clear = document.querySelector('#clear');
 clear.addEventListener('click', clearFunc);
-
 document.addEventListener('keydown', (event) => {
     if (event.key === 'c') {
         clearFunc();
     }
 });
 
+
 const backspace = document.querySelector('#backspace');
-backspace.addEventListener('click', () => {
-    if (toggleValue == 0) {
-        firstNum = firstNum.slice(0, -1);
-        display.innerHTML = firstNum;
-    } else {
-        secondNum = secondNum.slice(0, -1);
-        display.innerHTML = secondNum;
-    };
+backspace.addEventListener('click', backspaceFunc);
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Backspace') {
+        backspaceFunc()
+    }
 });
 
 // NUMBERS AND OPERATORS
@@ -198,6 +194,16 @@ function clearFunc() {
         display.innerHTML = secondNum;
     };
     periodToggle = 0;
+}
+
+function backspaceFunc() {
+    if (toggleValue == 0) {
+        firstNum = firstNum.slice(0, -1);
+        display.innerHTML = firstNum;
+    } else {
+        secondNum = secondNum.slice(0, -1);
+        display.innerHTML = secondNum;
+    };
 }
 
 function equalsFunc() {
