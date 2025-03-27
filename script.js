@@ -213,7 +213,7 @@ function backspaceFunc() {
 };
 
 function periodFunc() {
-    if (display.innerHTML != '' && periodToggle == 0) {
+    if (periodToggle == 0) {
         if (toggleValue == 0) {
             firstNum += '.';
             display.innerHTML = firstNum;
