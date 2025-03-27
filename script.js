@@ -49,10 +49,10 @@ backspace.addEventListener('click', () => {
 // NUMBERS AND OPERATORS
 const buttons = document.querySelectorAll(".btn");
 buttons.forEach((btn) => {
-  btn.addEventListener("click", () => {
+    btn.addEventListener("click", () => {
     storedValue = btn.innerHTML;
     createNum();
-  });
+    });
 });
 
 const operators = document.querySelectorAll('.operator');
@@ -117,11 +117,11 @@ equals.addEventListener('click', equalsFunc);
 // FUNCTIONS
 function createNum() {
     if (display.textContent.length < digitLimit) {
-      if (toggleValue == 0) {
-      display.innerHTML = firstNum += storedValue;
-      } else {
-          display.innerHTML = secondNum += storedValue;
-      }
+    if (toggleValue == 0) {
+    display.innerHTML = firstNum += storedValue;
+    } else {
+        display.innerHTML = secondNum += storedValue;
+    }
     } else {
         if (toggleValue == 0) {
         display.innerHTML = firstNum;
@@ -215,13 +215,16 @@ function equalsFunc() {
 // make ul.children.lenght = ullenght if ul lenght = then do if its more then make it repeat xd
 
 const historyList = document.querySelector('#historyList');
-let historyCount = historyList.children.length;
 function historyFunc(entry) {
-  if (historyCount < 2) {
+    let historyCount = historyList.children.length;
+
+    if (historyCount > 10) {
+        historyList.replaceChildren();
+    };
+
     let newEntry = document.createElement('li');
     newEntry.textContent = entry;
     historyList.prepend(newEntry);
-  };
 };
 
 const calcBody = document.querySelector('#calcBody');
