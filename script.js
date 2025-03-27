@@ -53,6 +53,12 @@ buttons.forEach((btn) => {
     createNum();
     });
 });
+document.addEventListener('keydown', (event) => {
+    if (event.key >= '1' && event.key <= '9' || event.key === '0') {
+        storedValue = event.key;
+        createNum();
+    };
+});
 
 const operators = document.querySelectorAll('.operator');
 operators.forEach((operator) => {
@@ -61,6 +67,7 @@ operators.forEach((operator) => {
         operatorToggle();
     });
 });
+
 
 const period = document.querySelector('#period');
 period.addEventListener('click', periodFunc);
@@ -72,9 +79,11 @@ document.addEventListener('keydown', (event) => {
 
 const negation = document.querySelector('#negation').addEventListener('click', negationFunc);
 document.addEventListener('keydown', (event) => {
-    if (event.key === '-') {
-        negationFunc();
-    }
+    if (event.shiftKey) {
+        if (event.key === '_') {
+            negationFunc();
+        };
+    };
 });
 
 
@@ -85,6 +94,8 @@ document.addEventListener('keydown', (event) => {
         equalsFunc();
     };
 });
+
+
 
 // FUNCTIONS
 function createNum() {
