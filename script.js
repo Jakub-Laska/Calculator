@@ -54,10 +54,21 @@ buttons.forEach((btn) => {
     });
 });
 document.addEventListener('keydown', (event) => {
-    if (event.key >= '1' && event.key <= '9' || event.key === '0') {
+    if (event.key >= '1' && event.key <= '9') {
         storedValue = event.key;
         createNum();
     };
+});
+
+// zero
+// add that you cant input multiple just 0 
+document.addEventListener('keydown', (event) => {
+    if (display.innerHTML != '' || resultNum != '') {
+        if (event.key == '0') {
+            storedValue = event.key;
+            createNum();
+        }
+    }
 });
 
 const operators = document.querySelectorAll('.operator');
@@ -257,6 +268,7 @@ function equalsFunc() {
         savedNum = '';
         secondNum = '';
         resultNum = '';
+        firstNum = '';
         history = resultString + '=' + resultRound;    
         console.log(history);
         historyFunc(resultString + ' = ' + resultRound);
