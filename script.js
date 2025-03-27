@@ -70,31 +70,21 @@ document.addEventListener('keydown', (event) => {
     };
 });
 
-const negation = document.querySelector('#negation').addEventListener('click', () => {
-        if (toggleValue == 0) {
-            if (firstNum > 0) {
-                firstNum = `-${firstNum}`;
-                display.innerHTML = firstNum;
-            } else if (firstNum < 0) {
-                firstNum = -firstNum;
-                display.innerHTML = firstNum;
-            };
-        } else {
-            if (secondNum > 0) {
-                secondNum = `-${secondNum}`;
-                display.innerHTML = secondNum;
-            } else if (secondNum < 0) {
-                secondNum = -secondNum;
-                display.innerHTML = secondNum;
-            };
-        };
+const negation = document.querySelector('#negation').addEventListener('click', negationFunc);
+document.addEventListener('keydown', (event) => {
+    if (event.key === '-') {
+        negationFunc();
+    }
 });
 
 
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', equalsFunc);
-
-
+document.addEventListener('keydown', (event) => {
+    if (event.key === '=') {
+        equalsFunc();
+    };
+});
 
 // FUNCTIONS
 function createNum() {
@@ -210,6 +200,26 @@ function periodFunc() {
         periodToggle = 0;
     };
 };
+
+function negationFunc() {
+    if (toggleValue == 0) {
+        if (firstNum > 0) {
+            firstNum = `-${firstNum}`;
+            display.innerHTML = firstNum;
+        } else if (firstNum < 0) {
+            firstNum = -firstNum;
+            display.innerHTML = firstNum;
+        };
+    } else {
+        if (secondNum > 0) {
+            secondNum = `-${secondNum}`;
+            display.innerHTML = secondNum;
+        } else if (secondNum < 0) {
+            secondNum = -secondNum;
+            display.innerHTML = secondNum;
+        };
+    };
+}
 
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
