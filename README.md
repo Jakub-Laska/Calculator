@@ -34,7 +34,6 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     history
      keyboard support
      better visual presentation
      sounds

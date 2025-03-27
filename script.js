@@ -19,20 +19,23 @@ const display = document.querySelector('#display');
 
 const secondDisplay = document.querySelector('#secondDisplay');
 
-// CLEARS
+// CLEARS(
 const clearAll = document.querySelector("#clearAll");
-clearAll.addEventListener("click", clearFunc);
+clearAll.addEventListener("click", clearAllFunc);
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        clearAllFunc();
+    }
+});
 
 const clear = document.querySelector('#clear');
-clear.addEventListener('click', () => {
-    if (toggleValue == 0) {
-        firstNum = '';
-        display.innerHTML = firstNum;
-    } else {
-        secondNum = '';
-        display.innerHTML = secondNum;
-    };
-    periodToggle = 0;
+clear.addEventListener('click', clearFunc);
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'c') {
+        clearFunc();
+    }
 });
 
 const backspace = document.querySelector('#backspace');
@@ -172,10 +175,10 @@ function operatorToggle() {
             secondNum = ''
             periodToggle = 0;
         }
-     }
+    }
 };
 
-function clearFunc() {
+function clearAllFunc() {
         display.style.fontSize = "2.5vw";
         display.innerHTML = "";
         firstNum = "";
@@ -185,6 +188,17 @@ function clearFunc() {
         periodToggle = 0;
         secondDisplay.innerHTML = '';
 };
+
+function clearFunc() {
+    if (toggleValue == 0) {
+        firstNum = '';
+        display.innerHTML = firstNum;
+    } else {
+        secondNum = '';
+        display.innerHTML = secondNum;
+    };
+    periodToggle = 0;
+}
 
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
@@ -211,8 +225,6 @@ function equalsFunc() {
         historyFunc(resultString + ' = ' + resultRound);
     };
 };
-
-// make ul.children.lenght = ullenght if ul lenght = then do if its more then make it repeat xd
 
 const historyList = document.querySelector('#historyList');
 function historyFunc(entry) {
