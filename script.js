@@ -67,6 +67,14 @@ operators.forEach((operator) => {
         operatorToggle();
     });
 });
+const operatorBtns = ['+', '-', '/', '*'];
+document.addEventListener('keydown', (event) => {
+    if (operatorBtns.includes(event.key)) {
+        storedOperator = event.key;
+        operatorToggle();
+    }
+});
+
 
 
 const period = document.querySelector('#period');
@@ -141,18 +149,15 @@ function operatorToggle() {
     if (firstNum != '') {
         if (toggleValue == 0) {
         savedNum = firstNum;
-        firstNum = '';
         secondDisplay.innerHTML = (savedNum += storedOperator);
         toggleValue = 1;
         display.innerHTML = secondNum
         periodToggle = 0;
-        } else {
-            firstNum = savedNum;
+        } else if (secondNum == '') {
             savedNum = '';
             secondDisplay.innerHTML = '';
             toggleValue = 0;
             display.innerHTML = firstNum;
-            secondNum = ''
             periodToggle = 0;
         }
     }
