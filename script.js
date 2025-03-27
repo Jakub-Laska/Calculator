@@ -61,9 +61,15 @@ document.addEventListener('keydown', (event) => {
 });
 
 // zero
-// add that you cant input multiple just 0 
+const zero = document.querySelector('#zero');
+zero.addEventListener('click', () => {
+    if (display.innerHTML != '0' || resultRound == '0') {
+            storedValue = zero.innerHTML;
+            createNum();
+        }
+});
 document.addEventListener('keydown', (event) => {
-    if (display.innerHTML != '' || resultNum != '') {
+    if (display.innerHTML != '0' || resultRound == '0') {
         if (event.key == '0') {
             storedValue = event.key;
             createNum();
