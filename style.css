@@ -28,10 +28,26 @@
     height: 70vh;
     position: relative;
   
-    background-color: #2C2C34;
+    background-color: rgb(44, 44, 52);
     border-radius: .5rem;
     border: 1px solid #bd4b43;
     box-shadow: 2px 2px 10px #bd4b43;
+    overflow: hidden;
+  }
+  #calcBody::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('img/mainTexture.img');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    pointer-events: none;
+    z-index: 1;
   }
   #calcContent {
     margin: 0;
@@ -40,6 +56,7 @@
     padding: 1.5rem 1rem;
     display: flex;
     flex-wrap: wrap;
+    z-index: 2;
   }
   .calcBtn {
     width: 25%;
