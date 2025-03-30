@@ -45,7 +45,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.1;
+    opacity: 0.2;
     pointer-events: none;
     z-index: 1;
   }
@@ -68,9 +68,9 @@
     color: #0c0c0c;
     text-shadow: 2px 2px 3px #bd4b43;
     background-color: #FFF8F0;
-    box-shadow: 5px 5px 5px #0c0c0c;
+    box-shadow: 5px 5px 10px #0c0c0c;
   
-    font-size: 3vw;
+    font-size: 1.5vw;
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
@@ -115,17 +115,18 @@
   }
   #historyScreen {
     display: none;
-    margin: 1rem;
+    margin: 1.5rem 1REM;
     border-radius: .5rem;
     border: 4px solid #2C2C34;
     background-color: #c9b5b5;
     width: 100%;
-    height: 85%;
+    height: 87.9%;
     padding: 1.5rem 1rem;
     align-self: flex-end;
-    box-shadow: 2px 2px 5px #0c0c0c;
+    box-shadow: 5px 5px 10px #0c0c0c;
     word-break: break-all;
     line-height: 1.5;
+    z-index: 2;
   }
   #historyList {
     list-style: none;
@@ -173,8 +174,8 @@
     #display {
         height: 15%;
     }
-    .calc-btn {
-        font-size: 2vw;
+    .calcBtn {
+        font-size: 3vw;
     }
   }
   @media (max-width: 430px) {
@@ -186,4 +187,7 @@
       padding: .2rem .2rem;
       font-size: smaller;
     }
+    .calcBtn {
+      font-size: 4vw;
+  }
   }

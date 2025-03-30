@@ -170,7 +170,7 @@ function operatorToggle() {
             };
         savedNum = firstNum;
         secondDisplay.innerHTML = (savedNum += storedOperator);
-        toggleValue = 1;
+    toggleValue = 1;
         display.innerHTML = secondNum
         periodToggle = 0;
         } else if (secondNum == '') {
