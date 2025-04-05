@@ -57,6 +57,20 @@ function playBackspaceSound() {
     backspaceSound.currentTime = 0;
     backspaceSound.play();
 }
+
+const clearAllSound = new Audio('sfx/clearAllSound.mp3');
+
+function playClearAllSound() {
+    clearAllSound.currentTime = 0;
+    clearAllSound.play();
+}
+
+const clearSound = new Audio('sfx/clearSound.mp3');
+
+function playClearSound() {
+    clearSound.currentTime = 0;
+    clearSound.play();
+}
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -230,23 +244,28 @@ function operatorToggle() {
 };
 
 function clearAllFunc() {
+    if (display.textContent != '' || secondDisplay.textContent != '') {
         display.style.fontSize = "2.5vw";
         display.innerHTML = "";
-        firstNum = "";
+        firstNum = '';
         savedNum = '';
         secondNum = '';
         toggleValue = 0;
         periodToggle = 0;
         secondDisplay.innerHTML = '';
+        playClearAllSound()
+    }
 };
 
 function clearFunc() {
-    if (toggleValue == 0) {
+    if (toggleValue == 0 && display.textContent != '') {
         firstNum = '';
         display.innerHTML = firstNum;
-    } else {
+        playClearSound()
+    } else if (toggleValue == 1 && display.textContent != '') {
         secondNum = '';
         display.innerHTML = secondNum;
+        playClearSound()
     };
     periodToggle = 0;
 };
