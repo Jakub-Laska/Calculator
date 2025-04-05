@@ -15,6 +15,26 @@ let history = '';
 let resultRound;
 let fullHistory;
 
+// LightMode
+    const lightModeBtn = document.querySelector('#lightModeBtn');
+    let lightModeToggle = false;
+    lightModeBtn.addEventListener('click', lightModeFunc);
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'l') {
+            lightModeFunc();
+        }
+    })
+    function lightModeFunc() {
+        lightModeToggle = !lightModeToggle;
+        lightModeBtn.textContent = lightModeToggle ? '🌒' : '☀️';
+        if (lightModeToggle) {
+            document.body.style.filter = 'hue-rotate(220deg) brightness(1.2)'
+            document.body.style.backgroundColor = '#ccd9e0';
+        } else {
+            document.body.style.filter = 'none'; 
+            document.body.style.backgroundColor = '#0c0c0c';
+        }
+    };
 // SOUNDS
 const muteBtn = document.querySelector('#muteBtn');
 let muteToggle = false;

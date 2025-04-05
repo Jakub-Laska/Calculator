@@ -22,22 +22,23 @@
     height: 100vh;
   
     background-color: #0c0c0c;
+    color: #a8a8b3;
+    transition: all 0.3s ease;
   }
-  #muteDark {
+  #muteLight {
     position: absolute;
     top: 2vw;
     right: 4vw;
   }
-  #muteBtn, #darkMode {
-    padding: .5rem;
+  #muteBtn, #lightModeBtn {
+    padding: .8rem;
     border-radius: 100%;
     border: 1px inset #bd4b43;
     background-color: #0c0c0c;
     font-size: 2rem;
-    text-align: center;
     box-shadow: 2px 2px 10px #bd4b43;
   }
-  #muteBtn:hover, #darkMode:hover {
+  #muteBtn:hover, #lighModeBtn:hover {
     transform: scale(1.1);
     opacity: .8;
     cursor: pointer;
@@ -54,10 +55,10 @@
     background-color: rgb(44, 44, 52);
     border-radius: .5rem;
     border: 1px solid #bd4b43;
-    box-shadow: 2px 2px 10px #bd4b43;
+    box-shadow: 5px 5px 30px #bd4b43;
     overflow: hidden;
     z-index: 2;
-  }
+    }
   #calcBody::before {
     content: '';
     position: absolute;
@@ -293,7 +294,7 @@
     #secondDisplay{
       top: 4rem;
     }
-    #muteBtn, #darkMode {
+    #muteBtn, #lightModeBtn {
       padding: .4rem;
       font-size: 1.5rem;
     }
