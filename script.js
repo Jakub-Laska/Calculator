@@ -16,52 +16,80 @@ let resultRound;
 let fullHistory;
 
 // SOUNDS
+const muteBtn = document.querySelector('#muteBtn');
+let muteToggle = false;
+muteBtn.addEventListener('click', () => {
+    muteToggle = !muteToggle;
+    muteBtn.textContent = muteToggle ? '🔊' : '🔇';
+});
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'm') {
+        muteToggle = !muteToggle;
+        muteBtn.textContent = muteToggle ? '🔊' : '🔇';
+    }
+})
 const clickSound = new Audio('sfx/clickSound.ogg');
 function playClickSound() {
+    if (!muteToggle) {
     clickSound.currentTime = 0;
     clickSound.play();
+    }
 }
 
 const historySound = new Audio('sfx/historySound.mp3');
 function playHistorySound() {
+    if (!muteToggle) {
     historySound.currentTime = 0;
     historySound.play();
+    }
 }
 
 const operatorSound = new Audio('sfx/operatorSound.wav');
 function playOperatorSound() {
+    if (!muteToggle) {
     operatorSound.currentTime = 0;
     operatorSound.play();
+    }
 }
 
 const equalsSound = new Audio('sfx/equalsSound.wav');
 function playEqualsSound() {
+    if (!muteToggle) {
     equalsSound.currentTime = 0;
     equalsSound.play();
+    }
 }
 
 const negationPeriodSound = new Audio('sfx/negationPeriodSound.wav');
 function playNegationPeriodSound() {
+    if (!muteToggle) {
     negationPeriodSound.currentTime = 0;
     negationPeriodSound.play();
+    }
 }
 
 const backspaceSound = new Audio('sfx/backspaceSound.wav');
 function playBackspaceSound() {
+    if (!muteToggle) {
     backspaceSound.currentTime = 0;
     backspaceSound.play();
+    }
 }
 
 const clearAllSound = new Audio('sfx/clearAllSound.mp3');
 function playClearAllSound() {
+    if (!muteToggle) {
     clearAllSound.currentTime = 0;
     clearAllSound.play();
+    }
 }
 
 const clearSound = new Audio('sfx/clearSound.mp3');
 function playClearSound() {
+    if (!muteToggle) {
     clearSound.currentTime = 0;
     clearSound.play();
+    }
 }
 
 
