@@ -276,7 +276,7 @@
   }
   @media (max-width: 430px) {
     #calcBody {
-        height: 90vh;
+        height: 85vh;
         width: 80vw;
     }
     #historyScreen {
@@ -292,5 +292,9 @@
     }
     #secondDisplay{
       top: 4rem;
+    }
+    #muteBtn, #darkMode {
+      padding: .4rem;
+      font-size: 1.5rem;
     }
   }
