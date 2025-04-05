@@ -36,6 +36,13 @@ function playOperatorSound() {
     operatorSound.currentTime = 0;
     operatorSound.play();
 }
+
+const equalsSound = new Audio('sfx/equalsSound.wav');
+
+function playEqualsSound() {
+    equalsSound.currentTime = 0;
+    equalsSound.play();
+}
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -306,6 +313,7 @@ function equalsFunc() {
         history = resultString + '=' + resultRound;    
         console.log(history);
         historyFunc(resultString + ' = ' + resultRound);
+        playEqualsSound()
     };
 };
 
