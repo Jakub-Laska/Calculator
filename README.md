@@ -34,13 +34,12 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     body background texture
      title and icons
      add tutorial screen help screen
-     clean up the code
-     test on different devices
      fix zero maybe
      fix too big of a result overflow problem
+     clean up the code
+     test on different devices
      done
 
 -->
