@@ -50,6 +50,13 @@ function playNegationPeriodSound() {
     negationPeriodSound.currentTime = 0;
     negationPeriodSound.play();
 }
+
+const backspaceSound = new Audio('sfx/backspaceSound.wav');
+
+function playBackspaceSound() {
+    backspaceSound.currentTime = 0;
+    backspaceSound.play();
+}
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -245,12 +252,14 @@ function clearFunc() {
 };
 
 function backspaceFunc() {
-    if (toggleValue == 0) {
+    if (toggleValue == 0 && display.textContent != '') {
         firstNum = firstNum.slice(0, -1);
         display.innerHTML = firstNum;
-    } else {
+        playBackspaceSound()
+    } else if (toggleValue == 1 && display.textContent != ''){
         secondNum = secondNum.slice(0, -1);
         display.innerHTML = secondNum;
+        playBackspaceSound()
     };
 };
 
