@@ -34,7 +34,7 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     title and icons
+     icons
      add tutorial screen help screen
      fix zero maybe
      fix too big of a result overflow problem
