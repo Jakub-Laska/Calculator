@@ -29,6 +29,13 @@ function playHistorySound() {
     historySound.currentTime = 0;
     historySound.play();
 }
+
+const operatorSound = new Audio('sfx/operatorSound.wav');
+
+function playOperatorSound() {
+    operatorSound.currentTime = 0;
+    operatorSound.play();
+}
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -186,15 +193,17 @@ function operatorToggle() {
             };
         savedNum = firstNum;
         secondDisplay.innerHTML = (savedNum += storedOperator);
-    toggleValue = 1;
+        toggleValue = 1;
         display.innerHTML = secondNum
         periodToggle = 0;
+        playOperatorSound()
         } else if (secondNum == '') {
             savedNum = '';
             secondDisplay.innerHTML = '';
             toggleValue = 0;
             display.innerHTML = firstNum;
             periodToggle = 0;
+        playOperatorSound()
         }
     }
 };
