@@ -43,6 +43,13 @@ function playEqualsSound() {
     equalsSound.currentTime = 0;
     equalsSound.play();
 }
+
+const negationPeriodSound = new Audio('sfx/negationPeriodSound.wav');
+
+function playNegationPeriodSound() {
+    negationPeriodSound.currentTime = 0;
+    negationPeriodSound.play();
+}
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -256,6 +263,7 @@ function periodFunc() {
             secondNum += '.';
             display.innerHTML = secondNum;
         };
+        playNegationPeriodSound()
         periodToggle = 1;
     } else if (periodToggle == 1) {
         if (toggleValue == 0) {
@@ -265,12 +273,13 @@ function periodFunc() {
             secondNum = secondNum.replace(/\./g, '');
             display.innerHTML = secondNum;
         };
+        playNegationPeriodSound()
         periodToggle = 0;
     };
 };
 
 function negationFunc() {
-    if (toggleValue == 0) {
+    if (toggleValue == 0 && display.textContent != '') {
         if (firstNum > 0) {
             firstNum = `-${firstNum}`;
             display.innerHTML = firstNum;
@@ -278,7 +287,8 @@ function negationFunc() {
             firstNum = -firstNum;
             display.innerHTML = firstNum;
         };
-    } else {
+    playNegationPeriodSound()
+    } else if (toggleValue == 1 && display.textContent != '') {
         if (secondNum > 0) {
             secondNum = `-${secondNum}`;
             display.innerHTML = secondNum;
@@ -286,8 +296,9 @@ function negationFunc() {
             secondNum = -secondNum;
             display.innerHTML = secondNum;
         };
+    playNegationPeriodSound()
     };
-}
+};
 
 function equalsFunc() {
     if (savedNum != '' && secondNum != "" && resultNum == '') {
