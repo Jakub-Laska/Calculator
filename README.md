@@ -34,7 +34,7 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     lightmode 
+     body background texture
      title and icons
      add tutorial screen help screen
      clean up the code
