@@ -14,6 +14,21 @@ let periodToggle = 0;
 let history = '';
 let resultRound;
 let fullHistory;
+
+// SOUNDS
+const clickSound = new Audio('sfx/clickSound.ogg');
+
+function playClickSound() {
+    clickSound.currentTime = 0;
+    clickSound.play();
+}
+
+const historySound = new Audio('sfx/historySound.mp3');
+
+function playHistorySound() {
+    historySound.currentTime = 0;
+    historySound.play();
+}
 // DISPLAY
 const display = document.querySelector('#display');
 
@@ -63,7 +78,7 @@ document.addEventListener('keydown', (event) => {
 // zero
 const zero = document.querySelector('#zero');
 zero.addEventListener('click', () => {
-    if (display.innerHTML != '0' || resultRound == '0') {
+    if (display.innerHTML != '' || resultRound == '') {
             storedValue = zero.innerHTML;
             createNum();
         }
@@ -130,6 +145,7 @@ function createNum() {
     } else {
         display.innerHTML = secondNum += storedValue;
     }
+    playClickSound()
     } else {
         if (toggleValue == 0) {
         display.innerHTML = firstNum;
@@ -303,7 +319,15 @@ const historyBtn = document.querySelector('#historyBtn');
 const historyScreen = document.querySelector('#historyScreen');
 let historyToggle = 0;
 
-historyBtn.addEventListener('click', () => {
+historyBtn.addEventListener('click', historyToggleFunc)
+
+document.addEventListener('keydown', (event) => {
+    if (event.key == 'h') {
+        historyToggleFunc();
+    }
+});
+
+function historyToggleFunc() {
     if (historyToggle == 0) {
         bodyContainer.style.display = 'none';
         historyScreen.style.display = 'flex';
@@ -313,4 +337,5 @@ historyBtn.addEventListener('click', () => {
         historyScreen.style.display = 'none';
         historyToggle = 0;
     };
-});
+    playHistorySound();
+}

@@ -34,13 +34,13 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     better visual presentation
-     sounds
-     lightmode
+     sounds and mute btn
+     lightmode 
      title and icons
      add tutorial screen help screen
      clean up the code
      test on different devices
+     fix zero maybe
      done
 
 -->
