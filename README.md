@@ -34,7 +34,7 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     sounds and mute btn
+     mute btn
      lightmode 
      title and icons
      add tutorial screen help screen

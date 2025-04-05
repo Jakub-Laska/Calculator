@@ -16,10 +16,33 @@
   }
   body {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 100vw;
     height: 100vh;
   
     background-color: #0c0c0c;
+  }
+  #muteDark {
+    position: absolute;
+    top: 2vw;
+    right: 4vw;
+  }
+  #muteBtn, #darkMode {
+    padding: .5rem;
+    border-radius: 100%;
+    border: 1px inset #bd4b43;
+    background-color: #0c0c0c;
+    font-size: 2rem;
+    text-align: center;
+    box-shadow: 2px 2px 10px #bd4b43;
+  }
+  #muteBtn:hover, #darkMode:hover {
+    transform: scale(1.1);
+    opacity: .8;
+    cursor: pointer;
+    background-color: #1a1a1d;
+    box-shadow: 4px 4px 20px #bd4b43;
   }
   #calcBody {
     display: flex;
@@ -123,6 +146,7 @@
   
     box-shadow: 0px 0px 10px #bd4b43;
     border: 2px solid #bd4b43;
+    transform: scale(1.1);
     
   }
   #historyBtn {

@@ -17,60 +17,54 @@ let fullHistory;
 
 // SOUNDS
 const clickSound = new Audio('sfx/clickSound.ogg');
-
 function playClickSound() {
     clickSound.currentTime = 0;
     clickSound.play();
 }
 
 const historySound = new Audio('sfx/historySound.mp3');
-
 function playHistorySound() {
     historySound.currentTime = 0;
     historySound.play();
 }
 
 const operatorSound = new Audio('sfx/operatorSound.wav');
-
 function playOperatorSound() {
     operatorSound.currentTime = 0;
     operatorSound.play();
 }
 
 const equalsSound = new Audio('sfx/equalsSound.wav');
-
 function playEqualsSound() {
     equalsSound.currentTime = 0;
     equalsSound.play();
 }
 
 const negationPeriodSound = new Audio('sfx/negationPeriodSound.wav');
-
 function playNegationPeriodSound() {
     negationPeriodSound.currentTime = 0;
     negationPeriodSound.play();
 }
 
 const backspaceSound = new Audio('sfx/backspaceSound.wav');
-
 function playBackspaceSound() {
     backspaceSound.currentTime = 0;
     backspaceSound.play();
 }
 
 const clearAllSound = new Audio('sfx/clearAllSound.mp3');
-
 function playClearAllSound() {
     clearAllSound.currentTime = 0;
     clearAllSound.play();
 }
 
 const clearSound = new Audio('sfx/clearSound.mp3');
-
 function playClearSound() {
     clearSound.currentTime = 0;
     clearSound.play();
 }
+
+
 // DISPLAY
 const display = document.querySelector('#display');
 
