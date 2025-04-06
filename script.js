@@ -225,8 +225,14 @@ document.addEventListener('keydown', (event) => {
 function createNum() {
     if (display.textContent.length < digitLimit) {
     if (toggleValue == 0) {
+        if (firstNum == 0) {
+            firstNum = '';
+        };
     display.innerHTML = firstNum += storedValue;
     } else {
+        if (secondNum == 0) {
+            secondNum = '';
+        }
         display.innerHTML = secondNum += storedValue;
     }
     playClickSound()
