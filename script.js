@@ -162,7 +162,7 @@ document.addEventListener('keydown', (event) => {
 // zero
 const zero = document.querySelector('#zero');
 zero.addEventListener('click', () => {
-    if (display.innerHTML != '' || resultRound == '') {
+    if (display.innerHTML != '' && resultRound == '') {
             storedValue = zero.innerHTML;
             createNum();
         }
