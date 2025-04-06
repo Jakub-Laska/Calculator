@@ -41,20 +41,43 @@
     pointer-events: none;
     z-index: -1;
   }
-  #muteLight {
+  #popup {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    width: 90vw;
+    height: 95vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+    background-color: hsla(4, 48%, 50%, 0.9);
+    border: 1vw outset #978897;
+    border-radius: .5rem;
+  }
+  #popup.show {
+    display: block;
+    opacity: 1;
+  }
+  #muteLightInfo {
     position: absolute;
     top: 2vw;
     right: 4vw;
   }
-  #muteBtn, #lightModeBtn {
-    padding: .8rem;
-    border-radius: 100%;
+  #infoBtn {
+    color: #36558F;
+  }
+  #muteBtn, #lightModeBtn, #infoBtn {
+    border-radius: 50%;
     border: 1px inset #bd4b43;
     background-color: #0c0c0c;
-    font-size: 2rem;
+    font-size: 2vw;  
     box-shadow: 2px 2px 10px #bd4b43;
+    width: 4vw;
+    height: 4vw;
+    text-align: center;
   }
-  #muteBtn:hover, #lightModeBtn:hover {
+  #muteBtn:hover, #lightModeBtn:hover, #infoBtn:hover {
     transform: scale(1.1);
     opacity: .8;
     cursor: pointer;
@@ -340,9 +363,9 @@
     #secondDisplay{
       top: 4rem;
     }
-    #muteBtn, #lightModeBtn {
-      padding: .4rem;
-      font-size: 1.5rem;
+    #muteBtn, #lightModeBtn, #infoBtn {
+      /* padding: .4rem; */
+      /* font-size: 1.5rem; */
     }
     #title {
       font-size: 1rem;

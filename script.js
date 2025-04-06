@@ -15,6 +15,28 @@ let history = '';
 let resultRound;
 let fullHistory;
 
+//  INFO
+const infoBtn = document.querySelector('#infoBtn');
+const popup = document.querySelector('#popup');
+let infoToggle = false;
+
+infoBtn.addEventListener('click', infoFunc);
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'i') {
+        infoFunc();
+    }
+})
+
+
+function infoFunc() {
+    infoToggle = !infoToggle;
+    if (infoToggle) {
+        popup.classList.add('show');
+    } else {
+        popup.classList.remove('show');
+    }
+}
+
 // LightMode
     const lightModeBtn = document.querySelector('#lightModeBtn');
     let lightModeToggle = false;
