@@ -218,7 +218,11 @@ document.addEventListener('keydown', (event) => {
         equalsFunc();
     };
 });
-
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        equalsFunc();
+    };
+});
 
 
 // FUNCTIONS

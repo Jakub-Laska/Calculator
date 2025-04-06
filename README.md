@@ -35,7 +35,6 @@ _______/\\\\\\\_______/\\\_____________
 
 <!-- 
      add tutorial screen help screen
-     fix zero maybe
      fix too big of a result overflow problem
      clean up the code
      test on different devices
