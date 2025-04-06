@@ -249,19 +249,19 @@ function createNum() {
 function resize() {
     if (screen.width < 600) {
         if (display.textContent.length > 10) {
-        display.style.fontSize = "3vw";
+        display.style.fontSize = "2.5vw";
         } else {
         display.style.fontSize = "4.5vw";
         }
     } else if (screen.width < 1100) {
         if (display.textContent.length > 10) {
-        display.style.fontSize = "2.5vw";
+        display.style.fontSize = "2vw";
         } else {
         display.style.fontSize = "3.5vw";
         }
     } else if (screen.width > 1100) {
         if (display.textContent.length > 10) {
-        display.style.fontSize = "1.25vw";
+        display.style.fontSize = "1vw";
         } else {
         display.style.fontSize = "1.75vw";
         }
@@ -386,6 +386,7 @@ function equalsFunc() {
         } else {
             resultNum = new Function('return ' + resultString)();
             resultRound = parseFloat(resultNum.toFixed(4));
+
             display.innerHTML = resultRound;
             display.setAttribute('title', resultNum);
             console.log(resultNum);
@@ -401,14 +402,16 @@ function equalsFunc() {
         console.log(history);
         historyFunc(resultString + ' = ' + resultRound);
         playEqualsSound()
+        resize()
     };
 };
+
 
 const historyList = document.querySelector('#historyList');
 function historyFunc(entry) {
     let historyCount = historyList.children.length;
 
-    if (historyCount > 10) {
+    if (historyCount > 8) {
         historyList.replaceChildren();
     };
 
