@@ -214,15 +214,11 @@ document.addEventListener('keydown', (event) => {
 const equals = document.querySelector('#equals');
 equals.addEventListener('click', equalsFunc);
 document.addEventListener('keydown', (event) => {
-    if (event.key === '=') {
+    if (event.key === '=' || event.key === 'Enter') {
         equalsFunc();
     };
 });
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        equalsFunc();
-    };
-});
+
 
 
 // FUNCTIONS
