@@ -18,9 +18,11 @@ let fullHistory;
 //  INFO
 const infoBtn = document.querySelector('#infoBtn');
 const popup = document.querySelector('#popup');
+const popupExitBtn = document.querySelector('#popupExitBtn')
 let infoToggle = false;
 
 infoBtn.addEventListener('click', infoFunc);
+popupExitBtn.addEventListener('click', infoFunc);
 document.addEventListener('keydown', (event) => {
     if (event.key === 'i') {
         infoFunc();
