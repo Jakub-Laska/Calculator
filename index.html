@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/icon.png">
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" type="module" defer></script>
 </head>
+
 <body>
     <div id="muteLightInfo">
-        <button id="muteBtn">🔇</button>
-        <button id="lightModeBtn">☀️</button>
-        <button id="infoBtn">ℹ️</button>
+        <button id="muteBtn" aria-label="Mute toggle">🔇</button>
+        <button id="lightModeBtn" aria-label="lightmode toggle">☀️</button>
+        <button id="infoBtn" aria-label="information toggle">ℹ️</button>
     </div>
     <h1 id="title">Calculator app by JL</h1>
     <div id="calcBody">
         <button id="historyBtn">History</button>
-            <!-- saved first number with operator -->
+        <!-- saved first number with operator -->
         <div id="secondDisplay"></div>
         <div id="calcContent">
             <!-- display -->
@@ -31,28 +31,28 @@
             <!-- first row -->
             <button class="calcBtn operator" id="clearAll">ce</button>
             <button class="calcBtn operator" id="clear">c</button>
-            <button class="calcBtn" id="backspace"><-</button>
-            <button class="calcBtn operator" id="division">/</button>
-            <!-- second row -->
-            <button class="calcBtn white btn" id="seven">7</button>
-            <button class="calcBtn white btn" id="eight">8</button>
-            <button class="calcBtn white btn" id="nine">9</button>
-            <button class="calcBtn operator" id="multiplication">*</button>
-            <!-- third row -->
-            <button class="calcBtn white btn" id="four">4</button>
-            <button class="calcBtn white btn" id="five">5</button>
-            <button class="calcBtn white btn" id="six">6</button>
-            <button class="calcBtn operator" id="minus">-</button>
-            <!-- fourth row -->
-            <button class="calcBtn white btn" id="one">1</button>
-            <button class="calcBtn white btn" id="two">2</button>
-            <button class="calcBtn white btn" id="three">3</button>
-            <button class="calcBtn operator" id="plus">+</button>
-            <!-- fifth row -->
-            <button class="calcBtn white " id="negation">+/-</button>
-            <button class="calcBtn white " id="zero">0</button>
-            <button class="calcBtn white " id="period">.</button>
-            <button class="calcBtn equalsBtn" id="equals">=</button>
+            <button class="calcBtn" id="backspace"><-< /button>
+                    <button class="calcBtn operator" id="division">/</button>
+                    <!-- second row -->
+                    <button class="calcBtn white btn" id="seven">7</button>
+                    <button class="calcBtn white btn" id="eight">8</button>
+                    <button class="calcBtn white btn" id="nine">9</button>
+                    <button class="calcBtn operator" id="multiplication">*</button>
+                    <!-- third row -->
+                    <button class="calcBtn white btn" id="four">4</button>
+                    <button class="calcBtn white btn" id="five">5</button>
+                    <button class="calcBtn white btn" id="six">6</button>
+                    <button class="calcBtn operator" id="minus">-</button>
+                    <!-- fourth row -->
+                    <button class="calcBtn white btn" id="one">1</button>
+                    <button class="calcBtn white btn" id="two">2</button>
+                    <button class="calcBtn white btn" id="three">3</button>
+                    <button class="calcBtn operator" id="plus">+</button>
+                    <!-- fifth row -->
+                    <button class="calcBtn white " id="negation">+/-</button>
+                    <button class="calcBtn white " id="zero">0</button>
+                    <button class="calcBtn white " id="period">.</button>
+                    <button class="calcBtn equalsBtn" id="equals">=</button>
         </div>
         <div id="historyScreen">
             <ul id="historyList"></ul>
@@ -101,4 +101,5 @@
         </div>
     </div>
 </body>
+
 </html>

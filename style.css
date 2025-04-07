@@ -1,309 +1,348 @@
 * {
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
-  
-    font-family: "Sixtyfour Convergence", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-      text-shadow: 2px 2px 3px #0c0c0c;
-    transition: all 0.3s ease;
-  }
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-  
-    background-color: #0c0c0c;
-    color: #a8a8b3;
-    position: relative;
-    transition: all 0.3s ease;
-    z-index: 2;
-  }
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('img/bodyTexture.gif');
-    background-position: center;
-    opacity: .05;
-    pointer-events: none;
-    z-index: -1;
-  }
-  #muteLightInfo {
-    position: absolute;
-    top: 2vw;
-    right: 4vw;
-  }
-  #infoBtn {
-    color: #36558F;
-  }
-  #muteBtn, #lightModeBtn, #infoBtn {
-    border-radius: 50%;
-    border: 1px inset #bd4b43;
-    background-color: #0c0c0c;
-    font-size: 2vw;  
-    box-shadow: 2px 2px 10px #bd4b43;
-    width: 4vw;
-    height: 4vw;
-    text-align: center;
-  }
-  #muteBtn:hover, #lightModeBtn:hover, #infoBtn:hover, #popupExitBtn:hover {
-    transform: scale(1.1);
-    opacity: .8;
-    cursor: pointer;
-    background-color: #1a1a1d;
-    box-shadow: 4px 4px 20px #36558F;
-  }
-  #title {
-    display: flex;
-    font-size: 2rem;
-    text-align: center;
-    padding: 2vw 1vw;
-    margin: 0;
-    text-shadow: 1px 1px 4px #0c0c0c;
-    text-transform: uppercase;
-  }
-  #calcBody {
-    display: flex;
-    flex-wrap: wrap;
-    width: 25vw;
-    height: 70vh;
-    margin: 0;
-    position: relative;
-  
-    background-color: rgb(44, 44, 52);
-    border-radius: .5rem;
-    border: 5px outset #bd4b43;
-    box-shadow: 5px 5px 30px #bd4b43;
-    overflow: hidden;
-    z-index: 2;
-    }
-  #calcBody::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('img/mainTexture.img');
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: -1;
-  }
-  #calcContent {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    padding: 1.5rem 1rem;
-    padding-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 2;
-  }
-  .calcBtn {
-    width: 24%;
-    margin: .1vw;
-    padding: .5rem .1rem;
-  
-    border-radius: .5rem;
-    border: 4px solid #2C2C34;
-    color: #0c0c0c;
-    text-shadow: 2px 2px 3px #bd4b43;
-    background-color: #FFF8F0;
-    box-shadow: 5px 1px 2px #0c0c0c;
-  
-    font-size: 1.5vw;
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
-  }
-  .white, #historyBtn {
-    position: relative;
-    z-index: 2;
-  }
-  .equalsBtn {
-    background-color: #bd4b43;
-    text-shadow: 2px 2px 3px #FFF8F0;
-    position: relative;
-    z-index: 2;
-  }
-  .equalsBtn::before, .white::before, #historyBtn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('img/rubberTexture.jpg');
-    opacity: .3;
-    pointer-events: none;
-    z-index: -1;
-  }
-  .operator, #backspace {
-    background-color: #978897;
-    position: relative;
-    z-index: 2;
-  }
-.operator::before, #backspace::before {
-  content: '';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Sixtyfour Convergence", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  text-shadow: 2px 2px 3px #0c0c0c;
+  transition: all 0.3s ease;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #0c0c0c;
+  color: #a8a8b3;
+  position: relative;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+body::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('img/mainTexture.img');
+  background: url("img/bodyTexture.gif");
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: .5;
+  opacity: 0.05;
   pointer-events: none;
   z-index: -1;
 }
-  .calcBtn:hover, #historyBtn:hover {
-    opacity: .8;
-    cursor: pointer;
-    transition: .1s;
-  
-    box-shadow: 0px 0px 10px #bd4b43;
-    border: 2px solid #bd4b43;
-    transform: scale(1.1);
-    
-  }
-  #historyBtn {
-    position: absolute;
-    padding: .5rem .4rem ;
-    border-radius: .5rem;
-    border: none;
-    text-shadow: none;
-    background-color: #bd4b43;
-    color: #FFF8F0;
-    border: 4px solid #2C2C34;
-    box-shadow: 2px 2px 5px #0c0c0c;
-  
-    top: .75rem;
-    left: 1rem;
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    font-size: .5rem;
-    z-index: 3;
-  }
-  #historyScreen {
-    display: none;
-    margin: 1.5rem 1REM;
-    border-radius: .5rem;
-    border: 4px solid #2C2C34;
-    background-color: #c9b5b5;
-    width: 100%;
-    height: 87.9%;
-    padding: 1.5rem 1rem;
-    align-self: flex-end;
-    box-shadow: 5px 5px 10px #0c0c0c;
-    word-break: break-all;
-    line-height: 1.5;
-    position: relative;
-    z-index: 2;
-  }
-  #historyScreen::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('img/historyTexture.jpg');
-    opacity: .3;
-    pointer-events: none;
-    z-index: -1;
-  }
-  #historyList {
-    list-style: none;
-    width: 100%;
-    height: 100%;
-    padding: .2rem;
-    text-align: left;
-  }
-  li {
-    margin-bottom: 1rem;
-    color: #bd4b43;
-    font-family: "Press Start 2P", system-ui;
-    font-weight: 400;
-    font-style: normal;
-    text-shadow: 1px 1px 2px #0c0c0c;
-    letter-spacing: 2px;
-  }
-  #display {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
-    height: 20%;
-    padding: .2rem .3rem;
-    overflow: hidden;
-    border: 1px solid #1a11119f;
-    box-shadow: 1px 1px 10px #bd4b43;
-    border-radius: .5rem;
-    text-shadow: 1px 1px 2px #ff0000;
-    margin: 0;
-    position: relative;
-    background-color: #0c0c0c;
-  }
 
-  #display::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('img/screenTexture.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.2;
-    pointer-events: none;
-  }
-  #secondDisplay {
-    display: inline;
-    justify-content: flex-end;
-    letter-spacing: 2px;
-    font-size: 1rem;
-    position: absolute;
-    top: 1.5rem;
-    right: 1rem;
-    text-shadow: 1px 1px 2px #ff0000;
-    background-color: #0c0c0cc7;
-    border: 1px solid #1a11119f;
-    box-shadow: 2px 2px 10px #bd4b43;
-    border-radius: 1px;
-    z-index: 2;
-  }
-  #media {
-    position: absolute;
-    bottom: 1vw;
-    left: 50%;
-    transform: translateX(-50%);
+#muteLightInfo {
+  position: absolute;
+  top: 2vw;
+  right: 4vw;
 }
+
+#infoBtn {
+  color: #36558f;
+}
+
+#muteBtn,
+#lightModeBtn,
+#infoBtn {
+  border-radius: 50%;
+  border: 1px inset #bd4b43;
+  background-color: #0c0c0c;
+  font-size: 2vw;
+  box-shadow: 2px 2px 10px #bd4b43;
+  width: 4vw;
+  height: 4vw;
+  text-align: center;
+}
+
+#muteBtn:hover,
+#lightModeBtn:hover,
+#infoBtn:hover,
+#popupExitBtn:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  cursor: pointer;
+  background-color: #1a1a1d;
+  box-shadow: 4px 4px 20px #36558f;
+}
+
+#title {
+  display: flex;
+  font-size: 2rem;
+  text-align: center;
+  padding: 2vw 1vw;
+  margin: 0;
+  text-shadow: 1px 1px 4px #0c0c0c;
+  text-transform: uppercase;
+}
+
+#calcBody {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25vw;
+  height: 70vh;
+  margin: 0;
+  position: relative;
+
+  background-color: rgb(44, 44, 52);
+  border-radius: 0.5rem;
+  border: 5px outset #bd4b43;
+  box-shadow: 5px 5px 30px #bd4b43;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#calcBody::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/mainTexture.img");
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#calcContent {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  padding-top: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+
+.calcBtn {
+  width: 24%;
+  margin: 0.1vw;
+  padding: 0.5rem 0.1rem;
+
+  border-radius: 0.5rem;
+  border: 4px solid #2c2c34;
+  color: #0c0c0c;
+  text-shadow: 2px 2px 3px #bd4b43;
+  background-color: #fff8f0;
+  box-shadow: 5px 1px 2px #0c0c0c;
+
+  font-size: 1.5vw;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.white,
+#historyBtn {
+  position: relative;
+  z-index: 2;
+}
+
+.equalsBtn {
+  background-color: #bd4b43;
+  text-shadow: 2px 2px 3px #fff8f0;
+  position: relative;
+  z-index: 2;
+}
+
+.equalsBtn::before,
+.white::before,
+#historyBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/rubberTexture.jpg");
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.operator,
+#backspace {
+  background-color: #978897;
+  position: relative;
+  z-index: 2;
+}
+
+.operator::before,
+#backspace::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/mainTexture.img");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.calcBtn:hover,
+#historyBtn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: 0.1s;
+
+  box-shadow: 0px 0px 10px #bd4b43;
+  border: 2px solid #bd4b43;
+  transform: scale(1.1);
+}
+
+#historyBtn {
+  position: absolute;
+  padding: 0.5rem 0.4rem;
+  border-radius: 0.5rem;
+  border: none;
+  text-shadow: none;
+  background-color: #bd4b43;
+  color: #fff8f0;
+  border: 4px solid #2c2c34;
+  box-shadow: 2px 2px 5px #0c0c0c;
+
+  top: 0.75rem;
+  left: 1rem;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.5rem;
+  z-index: 3;
+}
+
+#historyScreen {
+  display: none;
+  margin: 1.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 4px solid #2c2c34;
+  background-color: #c9b5b5;
+  width: 100%;
+  height: 87.9%;
+  padding: 1.5rem 1rem;
+  align-self: flex-end;
+  box-shadow: 5px 5px 10px #0c0c0c;
+  word-break: break-all;
+  line-height: 1.5;
+  position: relative;
+  z-index: 2;
+  overflow-y: auto;
+}
+
+#historyScreen::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/historyTexture.jpg");
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+#historyList {
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  padding: 0.2rem;
+  text-align: left;
+}
+
+li {
+  margin-bottom: 1rem;
+  color: #bd4b43;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  text-shadow: 1px 1px 2px #0c0c0c;
+  letter-spacing: 2px;
+}
+
+#display {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 20%;
+  padding: 0.2rem 0.3rem;
+  overflow: hidden;
+  border: 1px solid #1a11119f;
+  box-shadow: 1px 1px 10px #bd4b43;
+  border-radius: 0.5rem;
+  text-shadow: 1px 1px 2px #ff0000;
+  margin: 0;
+  position: relative;
+  background-color: #0c0c0c;
+}
+
+#display::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("img/screenTexture.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+#secondDisplay {
+  display: inline;
+  justify-content: flex-end;
+  letter-spacing: 2px;
+  font-size: 1rem;
+  position: absolute;
+  top: 1.5rem;
+  right: 1rem;
+  text-shadow: 1px 1px 2px #ff0000;
+  background-color: #0c0c0cc7;
+  border: 1px solid #1a11119f;
+  box-shadow: 2px 2px 10px #bd4b43;
+  border-radius: 1px;
+  z-index: 2;
+}
+
+#media {
+  position: absolute;
+  bottom: 1vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
 .mediaIcon {
-    max-width: 40px;
-    max-height: 40px;
-    border-radius: 50%;
-    transition: .5s;
-    background-color: rgba(255, 255, 255, 0.386);
-    box-shadow: 0 0 20px #978897  ;
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 50%;
+  transition: 0.5s;
+  background-color: rgba(255, 255, 255, 0.386);
+  box-shadow: 0 0 20px #978897;
 }
+
 .mediaIcon:hover {
-    transform: rotate(360deg) scale(1.2) translate(4px, 4px);
-    box-shadow: 0 0 20px #bd4b43;
-    cursor: pointer;
+  transform: rotate(360deg) scale(1.2) translate(4px, 4px);
+  box-shadow: 0 0 20px #bd4b43;
+  cursor: pointer;
 }
+
 #popup {
   display: none;
   opacity: 0;
@@ -316,30 +355,34 @@
   z-index: 5;
   background-color: hsla(4, 55%, 17%, 0.95);
   border: 1vw outset #978897;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
+
 #popup.show {
   display: flex;
   opacity: 1;
 }
+
 #popupExitBtn {
   position: absolute;
-  right: .5vw;
-  top: .5vw;
+  right: 0.5vw;
+  top: 0.5vw;
   padding: 1vw;
-  border-radius: .5rem;
-  border: .2vw outset #978897;
-  box-shadow: 4px 4px 20px #36558F;
+  border-radius: 0.5rem;
+  border: 0.2vw outset #978897;
+  box-shadow: 4px 4px 20px #36558f;
   background-color: #1a1a1d;
 }
-#popupTitle{
+
+#popupTitle {
   font-weight: 900;
   font-size: 3vw;
   text-shadow: -1px -1px 10px #0c0c0c;
-
+  padding: 1vw;
 }
-#popupContent{
+
+#popupContent {
   display: flex;
   flex-wrap: wrap;
   flex-shrink: 1;
@@ -347,89 +390,127 @@
   height: 80%;
   letter-spacing: 2px;
   text-shadow: 1px 1px 4px #0c0c0c;
-  text-transform:uppercase;
+  text-transform: uppercase;
   line-height: 1.5vw;
   font-size: 1vw;
 }
+
 #popupContent li {
   color: #c9b5b5;
   list-style: none;
   font-weight: 900;
   text-shadow: 1px 1px 2px #0c0c0c;
 }
+
 #popupContent strong {
   font-size: 1.5vw;
 }
-h3{
+
+h3 {
   margin-bottom: 2vw;
   font-weight: 900;
   font-size: 2vw;
 }
-#hotkeysInfo, #functionalityInfo{
+
+#hotkeysInfo,
+#functionalityInfo {
   width: 50%;
   margin: 0;
   padding: 2vw;
   color: #0c0c0c;
 }
 
-  @media (max-width: 1500px) {
-    #secondDisplay{
-      font-size: .7rem;
-    }    
+@media (max-width: 1500px) {
+  #secondDisplay {
+    font-size: 0.7rem;
   }
-  @media (max-width: 1100px) {
-    #calcBody {
-        width: 50vw;
-    }
-    #display {
-        height: 15%;
-    }
-    .calcBtn {
-        font-size: 3vw;
-    }
-    #muteBtn, #lightModeBtn, #infoBtn {
-      font-size: 3vw;  
-      width: 6vw;
-      height: 6vw;
-    }
-    #popupContent{
-      line-height: 2.5vw;
-      font-size: 1.5vw;
-    }
+}
+
+@media (max-width: 1100px) {
+  #calcBody {
+    width: 50vw;
   }
-  @media (max-width: 430px) {
-    #calcBody {
-        height: 80vh;
-        width: 80vw;
-    }
-    #historyScreen {
-      padding: .2rem .2rem;
-      font-size: smaller;
-    }
-    #display {
-      margin-bottom: 0;
-      margin-top: 2rem;
-    }
-    .calcBtn {
-      font-size: 4vw;
-    }
-    #secondDisplay{
-      top: 4rem;
-    }
-    #title {
-      font-size: 1rem;
-      padding-bottom: 1rem;
-    }
-    #media {
-      bottom: 4vw;
-    }
-    .mediaIcon{
-      max-width: 30px;
-      max-height: 30px;
-    }
-    #muteBtn, #lightModeBtn, #infoBtn {
-      font-size: 6vw;  
-      width: 10vw;
-      height: 10vw;
-    }
+
+  #display {
+    height: 15%;
   }
+
+  .calcBtn {
+    font-size: 3vw;
+  }
+
+  #muteBtn,
+  #lightModeBtn,
+  #infoBtn {
+    font-size: 3vw;
+    width: 6vw;
+    height: 6vw;
+  }
+
+  #popupContent {
+    line-height: 2.5vw;
+    font-size: 1.5vw;
+  }
+}
+
+@media (max-width: 768px) {
+  #calcBody {
+    width: 90vw;
+    height: 80vh;
+  }
+
+  .calcBtn {
+    font-size: 3vw;
+  }
+
+  #popupTitle {
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 430px) {
+  #calcBody {
+    height: 80vh;
+    width: 80vw;
+  }
+
+  #historyScreen {
+    padding: 0.2rem 0.2rem;
+    font-size: smaller;
+  }
+
+  #display {
+    margin-bottom: 0;
+    margin-top: 2rem;
+  }
+
+  .calcBtn {
+    font-size: 4vw;
+  }
+
+  #secondDisplay {
+    top: 4rem;
+  }
+
+  #title {
+    font-size: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  #media {
+    bottom: 4vw;
+  }
+
+  .mediaIcon {
+    max-width: 30px;
+    max-height: 30px;
+  }
+
+  #muteBtn,
+  #lightModeBtn,
+  #infoBtn {
+    font-size: 6vw;
+    width: 10vw;
+    height: 10vw;
+  }
+}

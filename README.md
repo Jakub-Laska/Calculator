@@ -34,7 +34,6 @@ _______/\\\\\\\_______/\\\_____________
 -->
 
 <!-- 
-     add tutorial screen help screen
      clean up the code
      test on different devices
      done
