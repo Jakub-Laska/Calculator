@@ -37,6 +37,7 @@ Theme Customization: Allow users to choose between different themes for a person
 
 Acknowledgments:
 This project is part of The Odin Project curriculum.
+**[Try It!](https://jakub-laska.github.io/Calculator/)**
 
 <!-- 
 _______/\\\\\\\_______/\\\_____________        
